@@ -1,4 +1,5 @@
-#include "../sweep/base.dtsi"
+// Onderstaande zorgt voor error in build, kan bestand niet vinden
+// #include "../sweep/base.dtsi"
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
