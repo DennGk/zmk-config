@@ -39,15 +39,15 @@
 #define THUMBS LTH1 LTH0 RTH0 RTH1  
 
 // MAKE_HRM maakt een HomeRowMod
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
-  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
-               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
-               hold-trigger-key-positions = <TRIGGER_POS>;)
+// #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
+//   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
+//                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+//                require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+//                hold-trigger-key-positions = <TRIGGER_POS>;)
 
-// &hml en &hmr kunnen nu in het keyscheme gebruikt worden
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+// // &hml en &hmr kunnen nu in het keyscheme gebruikt worden
+// MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+// MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 / {
 
