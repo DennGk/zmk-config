@@ -3,10 +3,43 @@
 #include <dt-bindings/zmk/bt.h>
 
 
+/*     DEFINITIONS     */
+// Layers
+
+#define DEF 0
+#define NUM 1
+#define NA 2
+#define FN 3
+#define CMND 4
+
+// Keycodes
+
+#define XXX &none
+#define ___ &trans
+
+// Homerow mods
+
+#define KEYS_L LT4 LT3 LT2 LT1 LT0 LM4 LM3 LM2 LM2 LM0 LB4 LB3 LB2 LB1 LB0
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
+#define THUMBS LTH1 LTH0 RTH0 RTH1  
+
+
+/*     CONFIG     */
+// Mod tap
+
 &mt {
-  //  flavor = "tap-preferred";
-   // tapping-term-ms = <200>;
+   flavor = "tap-preferred";
+   tapping-term-ms = <200>;
 };
+
+// Layer tap
+
+&lt {
+  flavor = "hold-preferred";
+  tapping-term-ms = <200>;
+};
+
+
 
 / {
 
