@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/sweep.h"
 
 /*     DEFINITIONS     */
 #define QUICK_TAP_MS 175
@@ -49,7 +50,7 @@
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 // // &hml en &hmr kunnen nu in het keyscheme gebruikt worden
-MAKE_HRM(hml, &kp, &kp, <KEYS_R THUMBS>) // Left-hand HRMs.
+//MAKE_HRM(hml, &kp, &kp, <KEYS_R THUMBS>) // Left-hand HRMs.
 // MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 / {
