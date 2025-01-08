@@ -47,7 +47,7 @@
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 // // &hml en &hmr kunnen nu in het keyscheme gebruikt worden
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hml, &kp, &kp, (KEYS_R, THUMBS)) // Left-hand HRMs.
 // MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 / {
