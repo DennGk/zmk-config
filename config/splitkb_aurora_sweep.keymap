@@ -12,7 +12,7 @@
 
 #define DEF 0
 #define NUM 1
-#define NA 2
+#define NAV 2
 #define FN 3
 #define CUSTOM 4
 
@@ -111,7 +111,7 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
         keymap {
                 compatible = "zmk,keymap";
 
-            DEF {
+            DEF { // layer 0
         bindings = <
         //╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
             &lt CUSTOM TAB  &kp W         &kp F         &kp P         &kp B           &kp J         &kp L         &kp U         &kp Y         &kp BSPC
@@ -125,7 +125,7 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
         >;
         };
 
-            NUM {
+            NUM { // layer 1
         bindings = <
         //╭───────────────┬──────────────┬──────────────┬──────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
             &mt CARET EXCL  &mt AMPS AT    &mt BSLH HASH  &mt GRAVE DLLR &kp PRCNT       &kp KP_PLUS   &kp N7        &kp N8        &kp N9        &kp BSPC
@@ -139,7 +139,33 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
         >;
         };
 
-        NAV {
+//   [_NAV] = LAYOUT(
+//   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//       _______,    _______,    _______,    _______,    _______,                           KC_SLASH,   KC_PGUP, _______,   KC_HOME,    KC_BSPC,
+//   //------------------------------------------------------------------------------       ----------------------------------------------------------------------------
+//       _______,    _______,    _______,    _______,    _______,                          KC_EQUAL,    KC_LEFT,   KC_UP,     KC_RIGHT,  KC_KP_PLUS,
+//   //----------------------------------------------------------------------------------------------------------------------------------------------------------
+//       _______,    _______,    _______,    _______,    _______,                          _______,    KC_PGDN,   KC_DOWN,   KC_END,   KC_MINS,
+//   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//                     KC_LEFT_GUI,       LSFT_T(KC_BSPC),                                            KC_SPACE,        KC_TRNS
+//   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//   ),
+
+        NAV { // layer 2
+        bindings = <
+        //╭───────────────┬──────────────┬──────────────┬──────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+            &mt CARET EXCL  &mt AMPS AT    &mt BSLH HASH  &mt GRAVE DLLR &kp PRCNT       &kp KP_PLUS   &kp N7        &kp N8        &kp N9        &kp BSPC
+        //├───────────────┼──────────────┼──────────────┼──────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+            &mt LT GT       &mt LBKT RBKT  &mt LBRC RBRC  &mt LPAR RPAR  &mt DQT SQT     &kp KP_EQUAL  &kp N4        &kp N5        &kp N6        &kp KP_ASTERISK
+        //├───────────────┼──────────────┼──────────────┼──────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+            &kp LC(X)       &kp LC(C)      &kp LC(V)      &kp LC(Z)      XXX             &kp KP_MINUS  &kp N1        &kp N2        &kp N3        &kp SEMI
+        //╰───────────────┼──────────────┴──────────────┼──────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                                          ___            &kp LSHFT       &kp SPACE     &kp N0
+    //             
+        >;
+        };
+
+        FN { // layer 3
         bindings = <
         &kp EXCL  &kp AT &kp HASH  &kp DLLR  &kp PRCNT             &kp CARET  &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR
         &kp HASH  &kp QMARK  &kp FSLH  &kp COLON  &kp SEMI           &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BSPC
@@ -148,16 +174,7 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
         >;
         };
 
-        FN {
-        bindings = <
-        &kp EXCL  &kp AT &kp HASH  &kp DLLR  &kp PRCNT             &kp CARET  &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR
-        &kp HASH  &kp QMARK  &kp FSLH  &kp COLON  &kp SEMI           &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BSPC
-        &kp LSHFT  &kp KP_PLUS &kp LBKT &kp RBKT   &kp BSLH             &kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-                      &mo 3 &kp LCTRL                &kp SPACE  &mo 2
-        >;
-        };
-
-        CUSTOM {
+        CUSTOM { // layer 4
         bindings = <
         &kp N1  &kp N2    &kp N3    &kp N4    &kp N5             &trans &trans   &trans   &trans  &trans
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                          &trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans
