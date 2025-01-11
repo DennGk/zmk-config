@@ -13,6 +13,8 @@
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
+#define TAP_DANCE_TERM 200
+
 // ZMK_COMBO(name, result, keys to press, layers (opt), timeout (opt), prior_idle (opt))
 
 /* Horizontal combos - left hand */
@@ -39,3 +41,9 @@ ZMK_COMBO(comment_block, &kp LC(LS(SLASH)), LM0 LB0, DEF, COMBO_TERM_FAST, COMBO
 
 /* Vertical combos - right hand */
 ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+/* Tap dance */
+ZMK_BEHAVIOR(ww, tap_dance, 
+  tapping-term-ms = <TAP_DANCE_TERM>;
+  bindings = <&mt N3 N1>, <&kp N2>;
+  )
