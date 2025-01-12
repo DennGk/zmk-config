@@ -45,5 +45,5 @@ ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* Tap dance */
 ZMK_BEHAVIOR(ww, tap_dance, 
   tapping-term-ms = <TAP_DANCE_TERM>;
-  bindings = <&mt N3 N1>, <&kp N2>;
-  )
+  bindings = <&kp D &kp E &kp N &kp N &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>, <&kp LS(S) &kp C &kp H &kp O &kp T &kp L &kp A &kp N &kp D &kp N7 &kp N8 &kp N9>;
+)
