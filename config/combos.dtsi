@@ -46,13 +46,13 @@ ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Tap dance */
 ZMK_BEHAVIOR(mailadres, macro, 
-  wait-ms = <100>;
+  wait-ms = <1>;
   tap-ms = <5>;
-  bindings = <&macro_tap &kp D &kp E &kp N &kp N &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+  bindings = <&macro_tap &kp D &kp E &kp N &kp N &kp I &kp S &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp K &kp A &kp D &kp A &kp S &kp T &kp E &kp R &kp DOT &kp N &kp L>;
 )
 
 ZMK_BEHAVIOR(ww, macro, 
-  wait-ms = <100>;
+  wait-ms = <1>;
   tap-ms = <5>;
   bindings = <&macro_tap &kp LS(S) &kp C &kp H &kp O &kp T &kp L &kp A &kp N &kp D &kp N7 &kp N8 &kp N9>;
 )
