@@ -95,15 +95,15 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
+//        combo_esc {
+//            timeout-ms = <50>;
+//            key-positions = <0 1>;
+//            bindings = <&kp ESC>;
+//        };
 
          combo_tab {
             timeout-ms = <50>;
-            key-positions = <10 11>;
+            key-positions = <0 1>;
             bindings = <&kp TAB>;
         };
     };
@@ -114,7 +114,7 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
             DEF { // layer 0
         bindings = <
         //╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬────────────────┬──────────────┬─────────────╮
-            &lt CUSTOM TAB  &kp W         &kp F         &kp P         &kp B           &kp J         &kp L         &kp U            &kp Y          &kp BSPC
+            &lt CUSTOM TAB  &mt ESC W         &kp F         &kp P         &kp B           &kp J         &kp L         &kp U            &kp Y          &kp BSPC
         //├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼────────────────┼──────────────┼─────────────┤
             &kp A           &kp R         &kp S         &kp T         &kp G           &kp M         &kp N         &kp E            &kp I          &kp O
         //├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼────────────────┼──────────────┼─────────────┤
