@@ -116,7 +116,7 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
         //├───────────────┼────────────────┼─────────────────┼───────────────┼─────────────┤ ├─────────────┼─────────────┼──────────────┼─────────────┼─────────────┤
             &mt GT LT       &mt RBKT LBKT    &mt RBRC LBRC     &mt RPAR LPAR   &kp SQT         &kp KP_EQUAL  &kp N4        &kp N5         &kp N6        &kp KP_ASTERISK
         //├───────────────┼────────────────┼─────────────────┼───────────────┼─────────────┤ ├─────────────┼─────────────┼──────────────┼─────────────┼─────────────┤
-            &kp LC(X)       &hml LGUI LC(C)  &hml LCTRL LC(V)  &hml LALT LC(Z) &kp DQT         &kp KP_MINUS  &hmr LAL N1   &hmr LCTRL N2  &hmr LGUI N3  &kp SEMI
+            &kp LC(X)       &hml LGUI LC(C)  &hml LCTRL LC(V)  &hml LALT LC(Z) &kp DQT         &kp KP_MINUS  &hmr LALT N1   &hmr LCTRL N2  &hmr LGUI N3  &kp SEMI
         //╰───────────────┼────────────────┴─────────────────┼───────────────┼─────────────┤ ├─────────────┼─────────────┼──────────────┴───────────────────────────╯
                                                                ___            &kp LSHFT       &kp SPACE     &kp N0
     //                                                       ╰───────────────┴─────────────╯ ╰─────────────┴─────────────╯
