@@ -21,6 +21,7 @@
 ZMK_COMBO(single_quote, &kp SQT, LT3 LT2, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(double_quote, &kp DQT, LT2 LT1, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(underscore, &kp UNDER, LB3 LB2, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(tab, &kp TAB, LT4 LT3, DEF NAV NUM FN CUSTOM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 //// Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 //// chording of mods. Custom hold-tap instances can be bootstrapped on the go using the
@@ -34,6 +35,7 @@ ZMK_COMBO(underscore, &kp UNDER, LB3 LB2, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 //ZMK_COMBO(paste, &kp LS(INS),  LB2 LB1,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Horizontal combos - right hand */
+ZMK_COMBO(delete_, &kp DEL, RT1 RT2, DEF NAV NUM FN CUSTOM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Vertical combos - left hand */
 ZMK_COMBO(comment, &kp LC(SLASH), LT0 LM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
