@@ -19,8 +19,8 @@
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(single_quote, &kp SQT, LT3 LT2, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(double_quote, &kp DQT, LT2 LT1, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(underscore, &kp UNDER, LB3 LB2, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(double_quote, &kp DQT, LT2 LT1, DEF, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(underscore, &kp UNDER, LB3 LB2, DEF, COMBO_TERM_FAST, COMBO_IDLE_SLOW)
 ZMK_COMBO(tab, &kp TAB, LT4 LT3, DEF NAV NUM FN CUSTOM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 //// Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
@@ -40,7 +40,7 @@ ZMK_COMBO(delete_, &kp DEL, RT1 RT2, DEF NAV NUM FN CUSTOM, COMBO_TERM_FAST, COM
 /* Vertical combos - left hand */
 ZMK_COMBO(comment, &kp LC(SLASH), LT0 LM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(comment_block, &kp LC(LS(SLASH)), LM0 LB0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(equals, kp EQUAL, RT1 RM1, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(equals, &kp EQUAL, RT1 RM1, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Vertical combos - right hand */
 ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -48,12 +48,12 @@ ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* Tap dance */
 ZMK_BEHAVIOR(mailadres, macro, 
   wait-ms = <1>;
-  tap-ms = <5>;
-  bindings = <&macro_tap &kp D &kp E &kp N &kp N &kp I &kp S &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp K &kp A &kp D &kp A &kp S &kp T &kp E &kp R &kp DOT &kp N &kp L>;
+  tap-ms = <1>;
+  bindings = <&macro_tap &kp D &kp E &kp N &kp N &kp I &kp S &kp DOT &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp K &kp A &kp D &kp A &kp S &kp T &kp E &kp R &kp DOT &kp N &kp L>;
 )
 
 ZMK_BEHAVIOR(ww, macro, 
   wait-ms = <1>;
-  tap-ms = <5>;
+  tap-ms = <1>;
   bindings = <&macro_tap &kp LS(S) &kp C &kp H &kp O &kp T &kp L &kp A &kp N &kp D &kp N7 &kp N8 &kp N9>;
 )
