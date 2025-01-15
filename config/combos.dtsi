@@ -45,7 +45,7 @@ ZMK_COMBO(equals, &kp EQUAL, RT1 RM1, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* Vertical combos - right hand */
 ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-/* Tap dance */
+/* Macros */
 ZMK_BEHAVIOR(mailadres, macro, 
   wait-ms = <1>;
   tap-ms = <1>;
@@ -68,4 +68,15 @@ ZMK_BEHAVIOR(dQT, macro,
   wait-ms = <1>;
   tap-ms = <1>;
   bindings = <&macro_tap &kp DQT &kp SPACE>;
+)
+
+/* Tap dance */
+ZMK_BEHAVIOR(TD_SQT, tap_dance,
+    tapping-term-ms = <TAP_DANCE_TERM>;
+    bindings = <&sQT>, <&kp SQT>;
+)
+
+ZMK_BEHAVIOR(TD_DQT, tap_dance,
+    tapping-term-ms = <TAP_DANCE_TERM>;
+    bindings = <&dQT>, <&kp DQT>;
 )
