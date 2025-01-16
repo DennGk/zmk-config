@@ -59,7 +59,7 @@ ZMK_BEHAVIOR(ww, macro,
 )
 
 ZMK_BEHAVIOR(keepass, macro,
-  wait-ms = <0>;
+  wait-ms = <1>;
   tap-ms = <5>;
   bindings = <&macro_tap &kp LS(H) &kp N3 &kp t &kp &kp LS(G) &kp G &kp S &kp T &kp N3 &kp N4 &kp M &kp &kp LS(I) &kp S &kp &kp LS(A) &kp W &kp N3 &kp S  &kp O &kp M &kp E &kp EXCL>;
 )
