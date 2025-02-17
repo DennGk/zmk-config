@@ -47,19 +47,19 @@ ZMK_COMBO(slash, &kp SLASH, RT0 RM0, DEF, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Macros */
 ZMK_BEHAVIOR(mailadres, macro, 
-  wait-ms = <1>;
+  wait-ms = <2>;
   tap-ms = <5>;
   bindings = <&macro_tap &kp D &kp E &kp N &kp N &kp I &kp S &kp DOT &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp K &kp A &kp D &kp A &kp S &kp T &kp E &kp R &kp DOT &kp N &kp L>;
 )
 
 ZMK_BEHAVIOR(ww, macro, 
-  wait-ms = <1>;
+  wait-ms = <2>;
   tap-ms = <5>;
   bindings = <&macro_tap &kp LS(S) &kp C &kp H &kp O &kp T &kp L &kp A &kp N &kp D &kp N7 &kp N8 &kp N9>;
 )
 
 ZMK_BEHAVIOR(keepass, macro,
-  wait-ms = <0>;
+  wait-ms = <2>;
   tap-ms = <5>;
   bindings = <&macro_tap &kp LS(H) &kp N3 &kp T &kp LS(G) &kp G &kp S &kp LS(T) &kp N3 &kp N4 &kp M &kp LS(I) &kp S &kp LS(A) &kp W &kp N3 &kp S &kp O &kp M &kp E &kp EXCL>;
 )
