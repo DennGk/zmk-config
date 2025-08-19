@@ -2,6 +2,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+// Layers
+
+#define DEF 0
+#define SYM 1
+#define NAV 2
+#define FN 3
+#define CUSTOM 4
+#define NUM 5
+
 // Keycodes
 
 #define xxx &none
@@ -11,22 +20,55 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        DEF { //default, layer 0
             bindings = <
-                //╭───────────────┬───────────┬───────────┬───────────┬───────────┬───────────╮                                                   ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                    &bt BT_SEL 0    &kp TAB     &kp W       &kp F       &kp P       &kp B                                                           &kp J       &kp L       &kp U       &kp Y       &kp BSPC    xxx
-                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                   ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &bt BT_SEL 1    &kp A       &kp R       &kp S       &kp T       &kp G                                                           &kp M       &kp N       &kp E       &kp I       &kp O       xxx
-                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &bt BT_SEL 2    &kp Z       &kp X       &kp C       &kp D       &kp V       xxx         xxx             xxx         xxx         &kp K       &kp H       &kp COMMA   &kp DOT     &kp SEMI    xxx
-                //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
-                                                            xxx         xxx         &kp LSHFT   &mo 1       xxx             xxx         &mo 1       &kp SPACE   xxx         xxx
-                //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────┴───────────┴───────────┴───────────╯
+                //╭───────────────┬───────────┬───────────┬───────────┬───────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+                    &bt BT_SEL 0    &kp TAB     &kp W       &kp F       &kp P       &kp B                                                               &kp J       &kp L       &kp U       &kp Y       &kp BSPC    xxx
+                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+                    &bt BT_SEL 1    &kp A       &kp R       &kp S       &kp T       &kp G                                                               &kp M       &kp N       &kp E       &kp I       &kp O       xxx
+                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+                    &bt BT_CLR      &mt Q Z     &kp X       &kp C       &kp D       &kp V       xxx         xxx             xxx         xxx             &kp K       &kp H       &kp COMMA   &kp DOT     &kp SEMI    xxx
+                //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+                                                            &mo num     &kp LCTRL   &kp LSHFT   &mo sym     xxx             xxx         &lt NAV ENTER   &kp SPACE   xxx         &kp LCTRL
+                //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
-        function_layer {
+
+        SYM { // symbols, layer 1
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |      |BT_CLR|BTSEL0|BTSEL1|BTSEL2|                                         |      |      |      |      |      |      |
+            // |       |      |      |BTSEL3|BTSEL4|      |                                         |      |      |      |      |      |      |
+            // |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+            //                       |      |      |      |      |      |      |      |      |      |      |      |      |
+            bindings = <
+            &trans &trans &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2              &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans     &bt BT_SEL 3 &bt BT_SEL 4 &trans                    &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans &trans
+                                 &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        NAV { // navigation, layer 2
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |      |BT_CLR|BTSEL0|BTSEL1|BTSEL2|                                         |      |      |      |      |      |      |
+            // |       |      |      |BTSEL3|BTSEL4|      |                                         |      |      |      |      |      |      |
+            // |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+            //                       |      |      |      |      |      |      |      |      |      |      |      |      |
+            bindings = <
+            &trans &trans &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2              &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans     &bt BT_SEL 3 &bt BT_SEL 4 &trans                    &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans &trans
+                                 &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        NUM { // numbers, layer 5
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |       |      |BT_CLR|BTSEL0|BTSEL1|BTSEL2|                                         |      |      |      |      |      |      |
             // |       |      |      |BTSEL3|BTSEL4|      |                                         |      |      |      |      |      |      |
