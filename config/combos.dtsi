@@ -16,3 +16,35 @@
 #define TAP_DANCE_TERM 200
 
 // ZMK_COMBO(name, result, keys to press, layers (opt), timeout (opt), prior_idle (opt))
+
+
+/* Macros */
+ZMK_BEHAVIOR(mailadres, macro,
+  wait-ms = <7>;
+  tap-ms = <5>;
+  bindings = <&macro_tap &kp D &kp E &kp N &kp N &kp I &kp S &kp DOT &kp G &kp E &kp E &kp R &kp D &kp I &kp N &kp K  &kp AT &kp K &kp A &kp D &kp A &kp S &kp T &kp E &kp R &kp DOT &kp N &kp L>;
+)
+
+ZMK_BEHAVIOR(ww, macro,
+  wait-ms = <7>;
+  tap-ms = <5>;
+  bindings = <&macro_tap &kp LS(W) &kp I &kp S &kp E &kp S &kp N &kp O &kp U &kp T &kp N4 &kp N5 &kp N6>;
+)
+
+ZMK_BEHAVIOR(keepass, macro,
+  wait-ms = <7>;
+  tap-ms = <5>;
+  bindings = <&macro_tap &kp LS(H) &kp N3 &kp T &kp LS(G) &kp G &kp S &kp LS(T) &kp N3 &kp N4 &kp M &kp LS(I) &kp S &kp LS(A) &kp W &kp N3 &kp S &kp O &kp M &kp E &kp EXCL>;
+)
+
+ZMK_BEHAVIOR(sQT, macro,
+  wait-ms = <1>;
+  tap-ms = <1>;
+  bindings = <&macro_tap &kp SQT &kp SPACE>;
+)
+
+ZMK_BEHAVIOR(dQT, macro,
+  wait-ms = <1>;
+  tap-ms = <1>;
+  bindings = <&macro_tap &kp DQT &kp SPACE>;
+)
