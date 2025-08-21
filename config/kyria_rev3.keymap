@@ -21,18 +21,23 @@
 
         DEF { //default, layer 0
             bindings = <
-                //╭───────────────┬───────────┬───────────┬───────────┬───────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                                    &kp A             &kp A         &kp A         &kp A         &kp A         &kp A                                                                 &kp A         &kp A         &kp A         &kp A         &kp A         &kp A
-                                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                                    &kp A             &kp A         &kp A         &kp A         &kp A         &kp A                                                                 &kp A         &kp A         &kp A         &kp A         &kp A         &kp A
-                                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                                    &kp A             &kp A         &kp A         &kp A         &kp A         &kp A         &kp A         &kp A             &kp A         &kp A             &kp A         &kp A         &kp A         &kp A         &kp A         &kp A
-                                //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
-                                                                            &kp A         &kp A         &kp A         &kp A         &kp A             &kp A         &kp A             &kp A         &kp A         &kp A
-                                //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
-                >;
+                // Left hand
+                &kp A &kp A &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A &kp A &kp A
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+                // Right hand
+                &kp A &kp A &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A &kp A &kp A &kp A &kp A
+                &kp A &kp A &kp A &kp A &kp A &kp A
+            >;
+
+            sensor-bindings = <
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+                &inc_dec_kp PG_UP PG_DN
+            >;
         };
 
 //        SYM { // symbols, layer 1
