@@ -1,0 +1,7 @@
+/ {
+    behaviors {
+        mom_layer_0: mom_layer {
+            compatible = "zmk,behavior-momentary-layer";
+        };
+    };
+};
