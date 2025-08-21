@@ -6,7 +6,6 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &pl0;  // New item added
-        zmk,behavior-momentary-layer-name = "m_layer";
     };
 
     mock_kscan: mock_kscan_0 {
