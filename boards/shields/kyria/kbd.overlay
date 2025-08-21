@@ -8,10 +8,6 @@
         zmk,physical-layout = &pl0;  // New item added
     };
 
-    keymap {
-        compatible = "zmk,keymap";
-    };
-
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
