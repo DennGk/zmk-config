@@ -20,7 +20,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: kbd
+    shield: kyria_rev3
   - board: nice_nano_v2
     shield: kyria_rev3_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n

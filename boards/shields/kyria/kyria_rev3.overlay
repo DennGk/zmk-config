@@ -5,7 +5,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &pl0;  // New item added
+        zmk,physical-layout = &physical_layout0;  // New item added
     };
 
     mock_kscan: mock_kscan_0 {
@@ -28,7 +28,7 @@
         >;
     };
 
-    pl0: pl_0 {
+    physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
