@@ -20,9 +20,9 @@
 ---
 include:
 #Dongle
-  - board: Seeed Studio XIAO nRF52840
+  - board: xiao_ble_sense
     shield: kyria_rev3
-  - board: Seeed Studio XIAO nRF52840
+  - board: xiao_ble_sense
     shield: settings_reset
 #Keyboard halves
   - board: nice_nano_v2
