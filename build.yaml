@@ -20,10 +20,10 @@
 ---
 include:
 #Dongle
-  - board: xiao_ble_sense
+  - board: seeeduino_xiao_ble
     shield: kyria_rev3
     snippet: zmk-usb-logging
-  - board: xiao_ble_sense
+  - board: seeeduino_xiao_ble
     shield: settings_reset
 #Keyboard halves
   - board: nice_nano_v2
