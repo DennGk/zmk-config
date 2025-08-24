@@ -31,6 +31,26 @@
 };
 
 / {
+    behaviors {
+        dctrlv: d_ctrl_v {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp V>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL)
+        };
+        vctrld: v_ctrl_d {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp D>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL)
+        };
+    };
+};
+
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,7 +61,7 @@
                 //├───────────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤                                                               ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤
                     xxx             &kp A           &kp R       &kp S       &kp T       &kp G                                                                       &kp M       &kp N           &kp E       &kp I       &kp O       xxx
                 //├───────────────┼───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┬──────────────────╮    ╭───────────┬───────────────┼───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             &mt Q Z         &kp X       &kp C       &kp D       &kp V       &kp LALT    &kp LC(LA(LSHFT))       xxx         xxx             &kp K       &kp H           &kp COMMA   &kp DOT     &kp SEMI    &kp F12
+                    xxx             &mt Q Z         &kp X       &kp C       &dctrlv       &vctrld       &kp LALT    &kp LC(LA(LSHFT))       xxx         xxx             &kp K       &kp H           &kp COMMA   &kp DOT     &kp SEMI    &kp F12
                 //╰───────────────┴───────────────┴───────────┼───────────┼───────────┼───────────┼───────────┼──────────────────┤    ├───────────┼───────────────┼───────────┼───────────────┼───────────┼───────────┴───────────┴───────────╯
                                                                 &mo NUM     &mo SYM     &kp LSHFT   &kp LCTRL     xxx                     xxx         xxx             &kp SPACE   &lt NAV ENTER   &kp LCTRL
                 //                                            ╰───────────┴───────────┴───────────┴───────────┴──────────────────╯    ╰───────────┴───────────────┴───────────┴───────────────┴───────────╯
