@@ -1,6 +1,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/kyria.h
+
 #include "combos.dtsi" // Must be sourced after HRM-combo hack.
 
 // Layers
@@ -15,6 +18,16 @@
 
 #define xxx &none
 #define ___ &trans
+
+/*     CONFIG     */
+
+// Layer tap
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
 
 / {
     keymap {
