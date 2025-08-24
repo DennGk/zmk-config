@@ -51,9 +51,9 @@
         SYM { // symbols, layer 1
             bindings = <
                 //╭───────────────┬───────────┬───────────┬───────────┬───────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                    &kp EXCL        &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp caret                                                           &kp KP_PLUS &kp N7      &kp N8      &kp N9      &kp BSPC    &kp DEL
+                    &kp EXCL        &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET                                                           &kp PLUS    &kp N7      &kp N8      &kp N9      &kp BSPC    &kp DEL
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &kp AMPS        &mt GT LT   &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR  xxx                                                    &kp EQUAL   &kp N4      &kp N5      &kp N6      &kp KP_ASTERISK  xxx
+                    &kp AMPS        &mt GT LT   &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR  xxx                                                          &kp EQUAL   &kp N4      &kp N5      &kp N6      &kp KP_ASTERISK  xxx
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
                     &kp BLSH        &kp GRAVE   xxx         &kp DQT     &kp SQT     &kp SLASH   xxx         xxx             xxx         xxx             &kp KP_MINUS &kp N1     &kp N2      &kp N3      &kp SEMI    xxx
                 //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
