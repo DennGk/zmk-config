@@ -37,35 +37,35 @@
             #binding-cells = <0>;
             bindings = <&kp D>, <&kp Z>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL);
+            keep-mods = <(MOD_LCTL)>;
         };
         vctrld: v_ctrl_d {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp V>, <&kp D>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL);
+            keep-mods = <(MOD_LCTL)>;
         };
         cctrlv: c_ctrl_v {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C>, <&kp V>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL);
+            keep-mods = <(MOD_LCTL)>;
         };
         xtrlc: x_ctrl_c {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp X>, <&kp C>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL);
+            keep-mods = <(MOD_LCTL)>;
         };
         ztrlx: z_ctrl_x {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp Z>, <&kp X>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL);
+            keep-mods = <(MOD_LCTL)>;
         };
     };
 };
