@@ -32,7 +32,7 @@
 
 / {
     behaviors {
-        dctrlv: d_ctrl_z {
+        dctrlz: d_ctrl_z {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp D>, <&kp Z>;
