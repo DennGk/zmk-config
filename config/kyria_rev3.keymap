@@ -11,140 +11,66 @@
 
 #define DEF 0
 #define SYM 1
-#define NAV 2
-#define MACROS 3
-#define NUM 4
 
 // Keycodes
 
 #define xxx &none
 #define ___ &trans
 
-/*     CONFIG     */
-
-// Layer tap
-#define QUICK_TAP_MS 175
-&lt {
-  flavor = "balanced";
-  tapping-term-ms = <200>;
-  quick-tap-ms = <QUICK_TAP_MS>;
-};
-
-/ {
-    behaviors {
-        dctrlz: d_ctrl_z {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp D>, <&kp Z>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-        vctrld: v_ctrl_d {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp V>, <&kp D>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-        cctrlv: c_ctrl_v {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&kp V>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-        xctrlc: x_ctrl_c {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp X>, <&kp C>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-        zctrlx: z_ctrl_x {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp X>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-    };
-};
-
-
 / {
     keymap {
         compatible = "zmk,keymap";
 
         DEF {
-            bindings = <
+            //bindings = <
                 //╭───────────────┬───────────────┬───────────┬───────────┬───────────┬───────────╮                                                               ╭───────────┬───────────────┬───────────┬───────────┬───────────┬───────────╮
-                    xxx             &lt MACROS TAB  &mt ESC W   &kp F       &kp P       &kp B                                                                       &kp J       &kp L           &kp U       &kp Y       &kp BSPC    &kp DEL
+            //        xxx             &lt MACROS TAB  &mt ESC W   &kp F       &kp P       &kp B                                                                       &kp J       &kp L           &kp U       &kp Y       &kp BSPC    &kp DEL
                 //├───────────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤                                                               ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             &kp A           &kp R       &kp S       &kp T       &kp G                                                                       &kp M       &kp N           &kp E       &kp I       &kp O       xxx
+            //        xxx             &kp A           &kp R       &kp S       &kp T       &kp G                                                                       &kp M       &kp N           &kp E       &kp I       &kp O       xxx
                 //├───────────────┼───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┬──────────────────╮    ╭───────────┬───────────────┼───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤
-                    &zctrlx       &mt Q Z           &xctrlc     &cctrlv     &dctrlz     &vctrld     &kp LALT    &kp LC(LA(LSHFT))       &bt BT_CLR &bt BT_SEL 0             &kp K       &kp H           &kp COMMA   &kp DOT     &kp SEMI    &kp F12
+            //        &zctrlx       &mt Q Z           &xctrlc     &cctrlv     &dctrlz     &vctrld     &kp LALT    &kp LC(LA(LSHFT))       &bt BT_CLR &bt BT_SEL 0             &kp K       &kp H           &kp COMMA   &kp DOT     &kp SEMI    &kp F12
                 //╰───────────────┴───────────────┴───────────┼───────────┼───────────┼───────────┼───────────┼──────────────────┤    ├───────────┼───────────────┼───────────┼───────────────┼───────────┼───────────┴───────────┴───────────╯
-                                                                &mo NUM     &mo SYM     &kp LSHFT   &kp LCTRL     xxx                   &bt BT_SEL 1  &bt BT_SEL 2             &kp SPACE   &lt NAV ENTER   &kp LCTRL
+            //                                                    &mo NUM     &mo SYM     &kp LSHFT   &kp LCTRL     xxx                   &bt BT_SEL 1  &bt BT_SEL 2             &kp SPACE   &lt NAV ENTER   &kp LCTRL
                 //                                            ╰───────────┴───────────┴───────────┴───────────┴──────────────────╯    ╰───────────┴───────────────┴───────────┴───────────────┴───────────╯
+            //>;
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+            // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | LAYER 1 | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+            //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+            bindings = <
+            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                  &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
+            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                  &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+            &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT            &mo 1   &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+                                  &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC       &kp RET &kp SPACE &kp TAB &kp BSPC &kp RALT
             >;
         };
+        
 
         SYM { // symbols, layer 1
+             // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |      |BT_CLR|BTSEL0|BTSEL1|BTSEL2|                                         |      |      |      |      |      |      |
+            // |       |      |      |BTSEL3|BTSEL4|      |                                         |      |      |      |      |      |      |
+            // |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+            //                       |      |      |      |      |      |      |      |      |      |      |      |      |
             bindings = <
+            &trans &trans &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2              &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans     &bt BT_SEL 3 &bt BT_SEL 4 &trans                    &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans &trans
+                                 &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+            >;
+            
+            //bindings = <
                 //╭───────────────┬───────────┬───────────┬───────────┬───────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                    &kp EXCL        &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET                                                           &kp PLUS    &kp N7      &kp N8      &kp N9      &kp BSPC    &kp DEL
+            //        &kp EXCL        &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET                                                           &kp PLUS    &kp N7      &kp N8      &kp N9      &kp BSPC    &kp DEL
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &kp AMPS        &mt GT LT   &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR  xxx                                                          &kp EQUAL   &kp N4      &kp N5      &kp N6      &kp KP_ASTERISK  xxx
+            //        &kp AMPS        &mt GT LT   &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR  xxx                                                          &kp EQUAL   &kp N4      &kp N5      &kp N6      &kp KP_ASTERISK  xxx
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &kp BSLH        &kp GRAVE   xxx         &kp DQT     &kp SQT     &kp SLASH   xxx         xxx             xxx         xxx             &kp MINUS &kp N1     &kp N2      &kp N3      &kp SEMI    xxx
+            //        &kp BSLH        &kp GRAVE   xxx         &kp DQT     &kp SQT     &kp SLASH   xxx         xxx             xxx         xxx             &kp MINUS &kp N1     &kp N2      &kp N3      &kp SEMI    xxx
                 //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
-                                                            xxx         ___         ___         ___         xxx             xxx         ___             ___         &kp N0         ___
+            //                                                xxx         ___         ___         ___         xxx             xxx         ___             ___         &kp N0         ___
                 //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
-            >;
-        };
-
-        NAV { // navigation, layer 2
-            bindings = <
-                //╭───────────────┬───────────┬───────────────┬───────────────┬───────────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                    xxx             xxx         xxx             xxx             xxx             xxx                                                                 xxx         &kp PG_UP   xxx         &kp HOME    &kp BSPC    &kp DEL
-                //├───────────────┼───────────┼───────────────┼───────────────┼───────────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             xxx         &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_RIGHT  xxx                                                                 xxx         &kp LEFT    &kp UP      &kp RIGHT   xxx         xxx
-                //├───────────────┼───────────┼───────────────┼───────────────┼───────────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             xxx         xxx             &msc SCRL_DOWN  xxx             xxx         xxx         xxx             xxx         xxx             xxx         &kp PG_DN   &kp DOWN    &kp END     xxx         xxx
-                //╰───────────────┴───────────┴───────────────┼───────────────┼───────────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
-                                                                xxx             ___             ___         xxx         xxx             xxx         ___             ___         xxx         ___
-                //                                            ╰───────────────┴───────────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        MACROS { // macros, layer 4
-            bindings = <
-                //╭───────────────┬───────────┬───────────┬──────────────────┬───────────────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                    ___             xxx         xxx         &kp LC(LA(LEFT))    &kp LC(LA(RIGHT))   xxx                                                                 xxx         xxx         xxx         xxx         &log       &mailadres
-                //├───────────────┼───────────┼───────────┼──────────────────┼───────────────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             xxx         xxx         xxx                 xxx                 xxx                                                                 xxx         xxx         xxx         xxx         xxx         &ww
-                //├───────────────┼───────────┼───────────┼──────────────────┼───────────────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             xxx         xxx         xxx                 xxx                 xxx         xxx         xxx             &bt BT_CLR &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2          xxx         xxx         xxx        &keepass
-                //╰───────────────┴───────────┴───────────┼──────────────────┼───────────────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
-                                                            xxx                 ___                 ___         xxx         xxx             xxx         ___             ___         xxx         ___
-                //                                        ╰──────────────────┴───────────────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
-            >;
-        };
-
-        NUM { // numbers, layer 5
-            bindings = <
-                //╭───────────────┬───────────┬───────────┬───────────┬───────────┬───────────╮                                                       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-                    xxx             xxx         &kp N7      &kp N8      &kp N9       xxx                                                                xxx         &kp F7      &kp F8      &kp F9      &kp F10     xxx
-                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             xxx         &kp N4      &kp N5      &kp N6       xxx                                                                xxx         &kp F4      &kp F5      &kp F6      &kp F11     xxx
-                //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             &kp N0      &kp N1      &kp N2      &kp N3       xxx        xxx         xxx             xxx         xxx             xxx         &kp F1      &kp F2      &kp F3      &kp F12     xxx
-                //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
-                                                            ___         ___         ___         xxx         &kp ENTER       xxx         &kp ENTER       ___         xxx         ___
-                //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
-            >;
+            //>;
         };
     };
 };
