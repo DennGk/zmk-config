@@ -32,7 +32,7 @@ jobs:
 
       # Upload de gegenereerde DTS
       - name: Upload DTS artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: left-half-zephyr-dts
           path: build/left/zephyr/zephyr.dts
