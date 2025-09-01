@@ -7,6 +7,10 @@
 
 #include "combos.dtsi" // Must be sourced after HRM-combo hack.
 
+&spi3 {
+    status = "disabled";
+};
+
 // Layers
 
 #define DEF 0
