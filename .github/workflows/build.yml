@@ -1,38 +1,6 @@
 name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
-# jobs:
-#   build:
-#     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
-
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout je repo
-      - uses: actions/checkout@v3
-
-      # Installeer dependencies (West, Zephyr, etc.)
-      - name: Setup ZMK environment
-        run: |
-          python3 -m pip install --user -r zmk/app/scripts/requirements.txt
-          west init -l zmk
-          west update
-          west zephyr-export
-
-      # Build firmware
-      - name: Build left half
-        run: |
-          west build -s zmk/app -b nice_nano_v2 \
-            -d build/left \
-            -- -DZMK_CONFIG=config/kyria_rev3.conf \
-            -DSHIELD=kyria_rev3_left \
-            -DCONFIG_ZMK_SPLIT=y \
-            -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-
-      # Upload de gegenereerde DTS
-      - name: Upload DTS artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: left-half-zephyr-dts
-          path: build/left/zephyr/zephyr.dts
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
