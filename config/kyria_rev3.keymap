@@ -94,14 +94,14 @@
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <QUICK_TAP_MS>;          
-            bindings = <&sQT> <&kp SQT>;     
+            bindings = <&sQT>, <&kp SQT>;     
         };
         hold_dqt: hold_tap_dqt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <QUICK_TAP_MS>;          
-            bindings = <&dQT> <&kp DQT>;     
+            bindings = <&dQT>, <&kp DQT>;     
         };
     };
 };
@@ -132,7 +132,7 @@
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
                     &kp AMPS        &mt GT LT   &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR  xxx                                                          &kp EQUAL   &kp N4      &kp N5      &kp N6      &kp KP_ASTERISK  xxx
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &kp BSLH        &kp SLASH   xxx         &hold_sqt   &hold_dqt  &kp GRAVE   xxx         xxx             xxx         xxx             &kp MINUS   &kp N1      &kp N2      &kp N3      &kp SEMI    xxx
+                    &kp BSLH        &kp SLASH   xxx         sQT         &dQT        &kp GRAVE   xxx         xxx             xxx         xxx             &kp MINUS   &kp N1      &kp N2      &kp N3      &kp SEMI    xxx
                 //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
                                                             xxx         ___         ___         ___         xxx             xxx         ___             ___         &kp N0         ___
                 //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
