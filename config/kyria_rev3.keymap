@@ -89,20 +89,6 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL)>;
         }; // questionmark, ctrl comment
-        hold_sqt: hold_tap_sqt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <QUICK_TAP_MS>;          
-            bindings = <&sQT>, <&kp SQT>;     
-        };
-        hold_dqt: hold_tap_dqt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <QUICK_TAP_MS>;          
-            bindings = <&dQT>, <&kp DQT>;     
-        };
     };
 };
 
