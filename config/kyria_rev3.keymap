@@ -75,7 +75,7 @@
         qmarkctrlcmnt: qmark_ctrl_comment {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp QMARK>, <LC(SLASH)>;
+            bindings = <&kp QMARK>, <&kp SLASH>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL)>;
         }; // questionmark, ctrl comment
