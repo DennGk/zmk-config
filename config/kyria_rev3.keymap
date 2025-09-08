@@ -37,27 +37,48 @@
 
 / {
     behaviors {
-        dctrlv: d_ctrl_v {
+        dctrlz: d_ctrl_z {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp D>, <&kp V>;
+            bindings = <&kp D>, <&kp Z>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL)>;
         };
-        vctrlz: v_ctrl_z {
+        vctrld: v_ctrl_d {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp V>, <&kp Z>;
+            bindings = <&kp V>, <&kp D>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL)>;
         };
-        zctrld: z_ctrl_d {
+        zctrlx: z_ctrl_x {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp D>;
+            bindings = <&kp Z>, <&kp X>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL)>;
         };
+        cctrlv: c_ctrl_v {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&kp V>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
+        xctrlc: x_ctrl_c {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&kp C>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
+        qmarkctrlcmnt: qmark_ctrl_comment {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp QMARK>, <LC(SLASH)>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL)>;
+        }; // questionmark, ctrl comment
     };
 };
 
@@ -70,9 +91,9 @@
                 //╭───────────────┬───────────────┬───────────┬───────────┬───────────┬───────────╮                                                               ╭───────────┬───────────────┬───────────┬───────────┬───────────┬───────────╮
                     &lt MACROS TAB  &kp ESC         &kp W       &kp F       &kp P       &kp B                                                                       &kp J       &kp L           &kp U       &kp Y       &kp BSPC    &kp DEL
                 //├───────────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤                                                               ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤
-                    xxx             &kp A           &kp R       &kp S       &kp T       &kp G                                                                       &kp M       &kp N           &kp E       &kp I       &kp O       xxx
+                    &kp UNDER       &kp A           &kp R       &kp S       &kp T       &kp G                                                                       &kp M       &kp N           &kp E       &kp I       &kp O       &qmarkctrlcmnt
                 //├───────────────┼───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┬──────────────────╮    ╭───────────┬───────────────┼───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┤
-                    &zctrld         &mt Q Z         &kp X       &kp C       &dctrlv     &vctrlz     &kp LALT    &kp LC(LA(LSHFT))       xxx         xxx             &kp K       &kp H           &kp COMMA   &kp DOT     &kp SEMI    &kp F12
+                    &zctrlx         &mt Q Z         &xctrlc     &cctrlv     &dctrlz     &vctrld     &kp LALT    &kp LC(LA(LSHFT))       xxx         xxx             &kp K       &kp H           &kp COMMA   &kp DOT     &kp SEMI    &kp F12
                 //╰───────────────┴───────────────┴───────────┼───────────┼───────────┼───────────┼───────────┼──────────────────┤    ├───────────┼───────────────┼───────────┼───────────────┼───────────┼───────────┴───────────┴───────────╯
                                                                 &mo NUM     &mo SYM     &kp LSHFT   &kp LCTRL   xxx                     xxx         &mo NAV         &kp SPACE   &kp ENTER       &kp LCTRL
                 //                                            ╰───────────┴───────────┴───────────┴───────────┴──────────────────╯    ╰───────────┴───────────────┴───────────┴───────────────┴───────────╯
@@ -87,7 +108,7 @@
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┤                                                       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
                     &kp AMPS        &mt GT LT   &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR  xxx                                                          &kp EQUAL   &kp N4      &kp N5      &kp N6      &kp KP_ASTERISK  xxx
                 //├───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┬───────────╮   ╭───────────┬───────────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-                    &kp BSLH        &kp GRAVE   xxx         &kp DQT     &kp SQT     &kp SLASH   xxx         xxx             xxx         xxx             &kp MINUS   &kp N1      &kp N2      &kp N3      &kp SEMI    xxx
+                    &kp BSLH        &kp SLASH   xxx         &kp DQT     &kp SQT     &kp GRAVE   xxx         xxx             xxx         xxx             &kp MINUS   &kp N1      &kp N2      &kp N3      &kp SEMI    xxx
                 //╰───────────────┴───────────┴───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤   ├───────────┼───────────────┼───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
                                                             xxx         ___         ___         ___         xxx             xxx         ___             ___         &kp N0         ___
                 //                                        ╰───────────┴───────────┴───────────┴───────────┴───────────╯   ╰───────────┴───────────────┴───────────┴───────────┴───────────╯
