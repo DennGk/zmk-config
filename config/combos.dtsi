@@ -54,3 +54,14 @@ ZMK_BEHAVIOR(dQT, macro,
   tap-ms = <1>;
   bindings = <&macro_tap &kp DQT &kp SPACE>;
 )
+
+/* Tap dance */
+ZMK_BEHAVIOR(TD_SQT, tap_dance,
+    tapping-term-ms = <TAP_DANCE_TERM>;
+    bindings = <&sQT>, <&kp SQT>;
+)
+
+ZMK_BEHAVIOR(TD_DQT, tap_dance,
+    tapping-term-ms = <TAP_DANCE_TERM>;
+    bindings = <&dQT>, <&kp DQT>;
+)
