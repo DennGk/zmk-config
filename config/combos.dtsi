@@ -28,7 +28,7 @@ ZMK_BEHAVIOR(mailadres, macro,
 ZMK_BEHAVIOR(ww, macro,
   wait-ms = <7>;
   tap-ms = <5>;
-  bindings = <&macro_tap &kp LS(G) &kp L &kp A &kp S &kp G &kp O &kp W &kp LS(S) &kp C &kp H &kp O &kp T &kp L &kp A &kp N &kp D &kp N2>;
+  bindings = <&macro_tap &kp LS(M) &kp A &kp N &kp C &kp H &kp E &kp S &kp T &kp E &kp R &kp LS(U) &kp LS(K) &kp N1 &kp N2>;
 )
 
 ZMK_BEHAVIOR(keepass, macro,
